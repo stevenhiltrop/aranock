@@ -1,0 +1,161 @@
+@charset "UTF-8"; 
+
+body {
+font-family: 'Tangerine', serif;
+text-shadow: 4px 4px 4px #aaa;
+}
+
+body,header,nav,section,article,aside,footer
+{border:1px solid grey; margin:5px; padding:8px;}
+nav ul {margin:0; padding:0;}
+nav ul li {display:inline; margin:5px;}
+
+
+.mainbox{
+background: oldlace;
+width:auto;
+height:auto;
+
+}
+
+
+.foreground{background:white;
+
+}
+
+.mainheading{
+text-align:center;
+color:Brown;
+}
+
+
+.container {
+
+background:black;
+
+
+}
+
+#pic1{
+text-align:center;
+width;1400;
+height:auto;
+border-width:5px;	
+border-style:ridge;
+
+}
+
+#pic2{
+ext-align:right;
+
+}
+
+.bodyy {background: white;
+width:auto;
+height:auto;
+}
+
+.back{
+background: black;
+}
+
+.navigator {
+background: black;}
+
+.brown {
+background: brown;
+}
+
+#main {
+ background: white; }
+
+header{
+background:brown;
+text-align:center;
+
+}
+
+nav {
+text-align:center;
+background: oldlace;
+font-size: 1.2em;
+}
+
+
+.center{
+text-align:center;}
+}
+
+h1{color:Silver;}
+
+.God{
+color:red;}
+
+.Imp {
+color:orange;}
+
+.Architect{
+color:blue;}
+
+.Guardian {
+color:green}
+
+.tagline {
+color:purple; 
+font-style: italic;
+}
+
+.ruletext{
+color:brown;
+font-style:italic;
+}
+.grats{
+text-align:center;}
+
+table, th, td {
+    border: 1px solid black;}
+    
+.bold {
+font-style: bold;
+}
+
+.cgiinfo{
+text-align:center;
+background:brown;
+
+}
+
+.danger {
+color: red;
+font-size: 2.0em;
+font-style:bold;
+}
+
+.section {
+        display: none;
+    }
+
+.textbox{
+background:white;
+border-style: ridge;
+border-width: 5px;
+}
+
+.footer{
+text-align:center;
+color:white;
+}
+
+.maintextbox {
+border-width:7px;	
+border-style:outset;
+border-color: oldlace;
+}
+
+.wrapper{
+
+ overflow:auto !important;
+    min-width:100% !important;
+    min-height:100% !important;**
+    position:absolute; 
+}
