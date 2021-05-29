@@ -25,12 +25,52 @@
       </nav>
     </section>
 
+    <!--Content-->
     <section class="back">
       <section class="mainbox">
         <section class="maintextbox">
-          <!--Content-->
+          <p>Classes</p>
+          <input type="radio" id="templar" name="character" value="templar"  />
+          <label for="harakim">Templar</label>
+          <input type="radio" id="mercenary" name="character" value="mercenary"  />
+          <label for="harakim">Mercenary</label>
+          <input type="radio" id="seyandu" name="character" value="seyandu"  />
+          <label for="harakim">Seyan'Du</label>
+          <input type="radio" id="harakim" name="character" value="harakim"  />
+          <label for="harakim">Harakim</label>
+          
+          <hr>
+          <p>Stats</p>
+          <ul>
+            <li>Braveness <input type="number" id="braveness" name="stat" min="1" value="1" oninput="calculate(this)"></li>
+            <li>Willness <input type="number" id="willness" name="stat" min="1" value="1" oninput=""></li>
+            <li>Intuition <input type="number" id="intuition" name="stat" min="1" value="1" oninput=""></li>
+            <li>Strength <input type="number" id="strength" name="stat" min="1" value="1" oninput=""></li>
+            <li>Agility <input type="number" id="agility" name="stat" min="1" value="1" oninput=""></li>
+          </ul>
+          
+
+          <hr>
+          <p>Skills</p>
         </section>
       </section>
     </section>
+
+    <!--Javascript-->
+    <script>
+      function calculate(element) {
+        base = element.value
+        characters = document.querySelectorAll('input[name="character"]')
+        for (character in characters) {
+          if (character.checked)
+        }
+
+        experience = experience_needed(base, difficulty)
+      }
+      
+      function experience_needed(base, difficulty,) {
+        return (base * base * base * difficulty / 20);
+      }
+    </script>
   </body>
 </html>
