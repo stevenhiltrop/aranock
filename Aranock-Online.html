@@ -67,13 +67,28 @@
             <li><label>Strength</label> <input type="number" id="strength" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Agility</label> <input type="number" id="agility" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
-          
-          <div id="required_experience">
-            Experience needed: 0
-          </div>
+
+          <p>Powers</p>
+          <ul>
+            <li><label>Braveness</label> <input type="number" id="hitpoints" name="hitpoints" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Wisdom</label> <input type="number" id="endurance" name="endurance" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Intuition</label> <input type="number" id="mana" name="mana" min="1" max="120" value="1" oninput="calculate(this)"></li>
+          </ul>
 
           <hr>
           <p>Skills</p>
+          <ul>
+            <li><label>Braveness</label> <input type="number" id="braveness" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Wisdom</label> <input type="number" id="wisdom" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Intuition</label> <input type="number" id="intuition" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Strength</label> <input type="number" id="strength" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Agility</label> <input type="number" id="agility" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+          </ul>
+
+          <div id="required_experience">
+            Experience needed: 0
+          </div>
+          
         </section>
       </section>
     </section>
@@ -113,12 +128,12 @@
       }
 
       function get_difficulty(stat, character_modifiers) {
-        fighting = ["braveness", "strength", "agility"];
-        spells = ["wisdom", "intuition"];
+        physical = ["braveness", "strength", "agility", "hitpoints", "endurance"];
+        magical = ["wisdom", "intuition", "mana", ];
 
-        if (fighting.includes(stat.id)) {
+        if (physical.includes(stat.id)) {
           return character_modifiers[0]
-        } else if (spells.includes(stat.id)) {
+        } else if (magical.includes(stat.id)) {
           return character_modifiers[1]
         } else {
           console.debug("Yea na yea, you seem to be doing something wrong here ey!");
@@ -128,11 +143,18 @@
 
       function experience_needed(trait, difficulty) {
         base = trait.value;
+
         if (trait.name == "stat") {
           return (base * base * base * difficulty / 20);
         }
         else if (trait.name == "skill") {
           return (base * base * base * difficulty / 40);
+        }
+        else if (trait.name == "hitpoints" || trait.name == "mana") {
+          return (base * difficulty);
+        }
+        else if (trait.name == "endurance") {
+          return (base * difficulty / 2);
         }
         else {
           console.debug("You're doing it again.. Steve..")
