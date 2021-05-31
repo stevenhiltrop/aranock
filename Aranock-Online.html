@@ -8,6 +8,7 @@
     <meta name="Author" content="Steven Hiltrop">
 
     <link rel="stylesheet" type="text/css" href="./Aranock-Online_files/template.css">
+    <script src="https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js"></script>
 
     <style>
       /*** Radio button style ***/
@@ -79,6 +80,13 @@
             <input type="radio" name="character" value="harakim"  />
             <img src="graphic/harakim.png">
           </label>
+          
+          <hr>
+          <p>OCR</p>
+          <input type="text" id="url" placeholder="Image URL" />
+          <input type="button" id="go_button" value="Run" />
+          <div id="ocr_status"> </div>
+          <div id="ocr_results"> </div>
 
           <hr>
           <p>Stats</p>
@@ -141,6 +149,20 @@
 
     <!--Javascript-->
     <script>
+      function runOCR(url) {
+        Tesseract.recognize(url).then(function(result) {
+          document.getElementById("ocr_results").innerText = result.text;
+         }).progress(function(result) {
+          document.getElementById("ocr_status").innerText = 
+            result["status"] + " (" + (result["progress"] * 100) + "%)";
+        });
+      }
+
+      document.getElementById("go_button").addEventListener("click", function(e) {
+        var url = document.getElementById("url").value;
+        runOCR(url);
+      });
+
       function calculate(trait) {
         character = get_character();
         character_modifiers = get_character_modifiers(character);
