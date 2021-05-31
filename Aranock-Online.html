@@ -78,17 +78,41 @@
           <hr>
           <p>Skills</p>
           <ul>
-            <li><label>Braveness</label> <input type="number" id="braveness" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
-            <li><label>Wisdom</label> <input type="number" id="wisdom" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
-            <li><label>Intuition</label> <input type="number" id="intuition" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
-            <li><label>Strength</label> <input type="number" id="strength" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
-            <li><label>Agility</label> <input type="number" id="agility" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Hand to hand</label> <input type="number" id="hand_to_hand" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Karate</label> <input type="number" id="karate" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Sword</label> <input type="number" id="sword" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Axe</label> <input type="number" id="axe" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Dagger</label> <input type="number" id="dagger" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Staff</label> <input type="number" id="staff" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Two handed sword</label> <input type="number" id="two_handed_sword" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Lock picking</label> <input type="number" id="lock_picking" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Stealth</label> <input type="number" id="stealth" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Perception</label> <input type="number" id="perception" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Swimming</label> <input type="number" id="swimming" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Magic Shield</label> <input type="number" id="magic_shield" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Bartering</label> <input type="number" id="bartering" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Repair</label> <input type="number" id="repair" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Light</label> <input type="number" id="light" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Recall</label> <input type="number" id="recall" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Protection</label> <input type="number" id="protection" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Enhance weapon</label> <input type="number" id="enhance_weapon" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Stun</label> <input type="number" id="stun" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Curse</label> <input type="number" id="curse" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Bless</label> <input type="number" id="bless" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Identify</label> <input type="number" id="identify" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Resistance</label> <input type="number" id="resistance" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Meditation</label> <input type="number" id="meditation" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Sense magic</label> <input type="number" id="sense_magic" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Immunity</label> <input type="number" id="immunity" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Surround hit</label> <input type="number" id="surround_hit" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Concentration</label> <input type="number" id="concentration" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Warcry</label> <input type="number" id="warcry" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
 
           <div id="required_experience">
             Experience needed: 0
           </div>
-          
+
         </section>
       </section>
     </section>
@@ -128,8 +152,12 @@
       }
 
       function get_difficulty(stat, character_modifiers) {
-        physical = ["braveness", "strength", "agility", "hitpoints", "endurance"];
-        magical = ["wisdom", "intuition", "mana", ];
+        physical = ["braveness", "strength", "agility", "hitpoints", "endurance", "hand_to_hand", "karate", "sword", "axe", 
+          "dagger", "staff", "two_handed_sword", "lock_picking", "stealth", "perception", "swimming", "bartering", "repair",
+          "resistance", "regenerate", "rest", "immunity", "surround_hit", "warcry"];
+        magical = ["wisdom", "intuition", "mana", "magic_shield", "light", "recall", "proctection", "enhance_weapon",
+          "stun", "curse", "bless", "identify", "blast", "dispell_magic", "heal", "ghost_companion", "meditation", 
+          "sense_magic", "concentration"];
 
         if (physical.includes(stat.id)) {
           return character_modifiers[0]
@@ -145,16 +173,16 @@
         base = trait.value;
 
         if (trait.name == "stat") {
-          return (base * base * base * difficulty / 20);
+          return Math.round(base * base * base * difficulty / 20);
         }
         else if (trait.name == "skill") {
-          return (base * base * base * difficulty / 40);
+          return Math.round(base * base * base * difficulty / 40);
         }
         else if (trait.name == "hitpoints" || trait.name == "mana") {
-          return (base * difficulty);
+          return Math.round(base * difficulty);
         }
         else if (trait.name == "endurance") {
-          return (base * difficulty / 2);
+          return Math.round(base * difficulty / 2);
         }
         else {
           console.debug("You're doing it again.. Steve..")
