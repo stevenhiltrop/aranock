@@ -92,9 +92,9 @@
 
           <p>Powers</p>
           <ul>
-            <li><label>Braveness</label> <input type="number" id="hitpoints" name="hitpoints" min="1" max="120" value="1" oninput="calculate(this)"></li>
-            <li><label>Wisdom</label> <input type="number" id="endurance" name="endurance" min="1" max="120" value="1" oninput="calculate(this)"></li>
-            <li><label>Intuition</label> <input type="number" id="mana" name="mana" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Hitpoints</label> <input type="number" id="hitpoints" name="hitpoints" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Endurance</label> <input type="number" id="endurance" name="endurance" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Mana</label> <input type="number" id="mana" name="mana" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
 
           <hr>
@@ -143,7 +143,6 @@
     <script>
       function calculate(trait) {
         character = get_character();
-        console.log("Character selected: " + character)
         character_modifiers = get_character_modifiers(character);
         difficulty = get_difficulty(trait, character_modifiers);
         experience = experience_needed(trait, difficulty);
