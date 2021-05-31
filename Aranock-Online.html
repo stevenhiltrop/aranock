@@ -8,6 +8,25 @@
     <meta name="Author" content="Steven Hiltrop">
 
     <link rel="stylesheet" type="text/css" href="./Aranock-Online_files/template.css">
+
+    <style>
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      
+      /* Firefox */
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
+      input[type='number']{
+      width: 5%;
+} 
+    </style>
+
   </head>
 
   <body class="body">
@@ -30,25 +49,28 @@
       <section class="mainbox">
         <section class="maintextbox">
           <p>Classes</p>
-          <input type="radio" id="templar" name="character" value="templar"  />
+          <input type="radio" name="character" value="templar" checked="checked" />
           <label for="harakim">Templar</label>
-          <input type="radio" id="mercenary" name="character" value="mercenary"  />
+          <input type="radio" name="character" value="mercenary"  />
           <label for="harakim">Mercenary</label>
-          <input type="radio" id="seyandu" name="character" value="seyandu"  />
+          <input type="radio" name="character" value="seyandu"  />
           <label for="harakim">Seyan'Du</label>
-          <input type="radio" id="harakim" name="character" value="harakim"  />
+          <input type="radio" name="character" value="harakim"  />
           <label for="harakim">Harakim</label>
           
           <hr>
           <p>Stats</p>
           <ul>
-            <li>Braveness <input type="number" id="braveness" name="stat" min="1" value="1" oninput="calculate(this)"></li>
-            <li>Willness <input type="number" id="willness" name="stat" min="1" value="1" oninput=""></li>
-            <li>Intuition <input type="number" id="intuition" name="stat" min="1" value="1" oninput=""></li>
-            <li>Strength <input type="number" id="strength" name="stat" min="1" value="1" oninput=""></li>
-            <li>Agility <input type="number" id="agility" name="stat" min="1" value="1" oninput=""></li>
+            <li><label>Braveness</label> <input type="number" id="braveness" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Wisdom</label> <input type="number" id="wisdom" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Intuition</label> <input type="number" id="intuition" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Strength</label> <input type="number" id="strength" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
+            <li><label>Agility</label> <input type="number" id="agility" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
           
+          <div id="required_experience">
+            Experience needed: 0
+          </div>
 
           <hr>
           <p>Skills</p>
@@ -58,19 +80,69 @@
 
     <!--Javascript-->
     <script>
-      function calculate(element) {
-        base = element.value
-        characters = document.querySelectorAll('input[name="character"]')
-        for (character in characters) {
-          if (character.checked)
-        }
+      function calculate(trait) {
+        character = get_character();
+        character_modifiers = get_character_modifiers(character);
+        difficulty = get_difficulty(trait, character_modifiers);
+        experience = experience_needed(trait, difficulty);
+        show(experience);
+      }
 
-        experience = experience_needed(base, difficulty)
+      function get_character() {
+        characters = document.getElementsByName("character");
+        for (var i=0; i<characters.length; i++) {
+          if (characters[i].checked) {
+            return characters[i].value
+          }
+        }
       }
-      
-      function experience_needed(base, difficulty,) {
-        return (base * base * base * difficulty / 20);
+
+      function get_character_modifiers(character) {
+        switch (character) {
+          case "templar":
+            return [3, 7];
+          case "mercenary":
+            return [5, 5];
+          case "seyandu":
+            return [6, 6];
+          case "harakim":
+            return [7, 3];
+          default:
+            break;
+        }
       }
+
+      function get_difficulty(stat, character_modifiers) {
+        fighting = ["braveness", "strength", "agility"];
+        spells = ["wisdom", "intuition"];
+
+        if (fighting.includes(stat.id)) {
+          return character_modifiers[0]
+        } else if (spells.includes(stat.id)) {
+          return character_modifiers[1]
+        } else {
+          console.debug("Yea na yea, you seem to be doing something wrong here ey!");
+        }
+        
+      }
+
+      function experience_needed(trait, difficulty) {
+        base = trait.value;
+        if (trait.name == "stat") {
+          return (base * base * base * difficulty / 20);
+        }
+        else if (trait.name == "skill") {
+          return (base * base * base * difficulty / 40);
+        }
+        else {
+          console.debug("You're doing it again.. Steve..")
+        }
+      }
+
+      function show(experience) {
+        document.getElementById("required_experience").innerHTML = "Experience needed: " + experience;
+      }
+
     </script>
   </body>
 </html>
