@@ -10,6 +10,20 @@
     <link rel="stylesheet" type="text/css" href="./Aranock-Online_files/template.css">
 
     <style>
+      /*** Radio button style ***/
+      /* Hide */
+      input[type=radio] { 
+        position: absolute;
+        opacity: 0;
+        height: 5%;
+      }
+
+      /* checked button */
+      input[type=radio]:checked + img {
+        outline: 2px solid #f00;
+      }
+
+      /*** Input number field ***/
       /* Chrome, Safari, Edge, Opera */
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
@@ -22,9 +36,9 @@
         -moz-appearance: textfield;
       }
 
-      input[type='number']{
-      width: 5%;
-} 
+      input[type='number'] {
+        width: 5%;
+      } 
     </style>
 
   </head>
@@ -49,15 +63,23 @@
       <section class="mainbox">
         <section class="maintextbox">
           <p>Classes</p>
-          <input type="radio" name="character" value="templar" checked="checked" />
-          <label for="harakim">Templar</label>
-          <input type="radio" name="character" value="mercenary"  />
-          <label for="harakim">Mercenary</label>
-          <input type="radio" name="character" value="seyandu"  />
-          <label for="harakim">Seyan'Du</label>
-          <input type="radio" name="character" value="harakim"  />
-          <label for="harakim">Harakim</label>
-          
+          <label for="templar"> 
+            <input type="radio" name="character" value="templar" checked="checked" />
+            <img src="graphic/templar.png">
+          </label>
+          <label for="mercenary">
+            <input type="radio" name="character" value="mercenary" />
+            <img src="graphic/mercenary.png">
+          </label>
+          <label for="seyandu">
+            <input type="radio" name="character" value="seyandu" />
+            <img src="graphic/seyandu.png">
+          </label>
+          <label for="harakim">
+            <input type="radio" name="character" value="harakim"  />
+            <img src="graphic/harakim.png">
+          </label>
+
           <hr>
           <p>Stats</p>
           <ul>
@@ -121,6 +143,7 @@
     <script>
       function calculate(trait) {
         character = get_character();
+        console.log("Character selected: " + character)
         character_modifiers = get_character_modifiers(character);
         difficulty = get_difficulty(trait, character_modifiers);
         experience = experience_needed(trait, difficulty);
