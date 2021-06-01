@@ -8,7 +8,6 @@
     <meta name="Author" content="Steven Hiltrop">
 
     <link rel="stylesheet" type="text/css" href="./Aranock-Online_files/template.css">
-    <script src="https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js"></script>
 
     <style>
       /*** Radio button style ***/
@@ -80,13 +79,6 @@
             <input type="radio" name="character" value="harakim"  />
             <img src="graphic/harakim.png">
           </label>
-          
-          <hr>
-          <p>OCR</p>
-          <input type="text" id="url" placeholder="Image URL" />
-          <input type="button" id="go_button" value="Run" />
-          <div id="ocr_status"> </div>
-          <div id="ocr_results"> </div>
 
           <hr>
           <p>Stats</p>
@@ -98,12 +90,20 @@
             <li><label>Agility</label> <input type="number" id="agility" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
 
+          <div id="required_experience_stat">
+            Experience needed: 0
+          </div>
+
           <p>Powers</p>
           <ul>
             <li><label>Hitpoints</label> <input type="number" id="hitpoints" name="hitpoints" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Endurance</label> <input type="number" id="endurance" name="endurance" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Mana</label> <input type="number" id="mana" name="mana" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
+
+          <div id="required_experience_power">
+            Experience needed: 0
+          </div>
 
           <hr>
           <p>Skills</p>
@@ -139,7 +139,7 @@
             <li><label>Warcry</label> <input type="number" id="warcry" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
 
-          <div id="required_experience">
+          <div id="required_experience_skill">
             Experience needed: 0
           </div>
 
@@ -149,26 +149,12 @@
 
     <!--Javascript-->
     <script>
-      function runOCR(url) {
-        Tesseract.recognize(url).then(function(result) {
-          document.getElementById("ocr_results").innerText = result.text;
-         }).progress(function(result) {
-          document.getElementById("ocr_status").innerText = 
-            result["status"] + " (" + (result["progress"] * 100) + "%)";
-        });
-      }
-
-      document.getElementById("go_button").addEventListener("click", function(e) {
-        var url = document.getElementById("url").value;
-        runOCR(url);
-      });
-
       function calculate(trait) {
         character = get_character();
         character_modifiers = get_character_modifiers(character);
         difficulty = get_difficulty(trait, character_modifiers);
         experience = experience_needed(trait, difficulty);
-        show(experience);
+        show(trait, experience);
       }
 
       function get_character() {
@@ -233,8 +219,14 @@
         }
       }
 
-      function show(experience) {
-        document.getElementById("required_experience").innerHTML = "Experience needed: " + experience;
+      function show(trait, experience) {
+        if (trait.name == "stat") {
+          document.getElementById("required_experience_stat").innerHTML = "Experience needed: " + experience;
+        } else if (trait.name == "skill") {
+          document.getElementById("required_experience_skill").innerHTML = "Experience needed: " + experience;
+        } else {
+          document.getElementById("required_experience_power").innerHTML = "Experience needed: " + experience;
+        }
       }
 
     </script>
