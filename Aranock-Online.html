@@ -22,6 +22,11 @@
       input[type=radio]:checked + img {
         outline: 2px solid #f00;
       }
+      /*** List ***/
+      /* Remove disc */
+      li {
+        list-style-type: none;
+      }
 
       /*** Input number field ***/
       /* Chrome, Safari, Edge, Opera */
@@ -81,33 +86,15 @@
           </label>
 
           <hr>
-          <p>Stats</p>
           <ul>
             <li><label>Braveness</label> <input type="number" id="braveness" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Wisdom</label> <input type="number" id="wisdom" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Intuition</label> <input type="number" id="intuition" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Strength</label> <input type="number" id="strength" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Agility</label> <input type="number" id="agility" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></li>
-          </ul>
-
-          <div id="required_experience_stat">
-            Experience needed: 0
-          </div>
-
-          <p>Powers</p>
-          <ul>
             <li><label>Hitpoints</label> <input type="number" id="hitpoints" name="hitpoints" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Endurance</label> <input type="number" id="endurance" name="endurance" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Mana</label> <input type="number" id="mana" name="mana" min="1" max="120" value="1" oninput="calculate(this)"></li>
-          </ul>
-
-          <div id="required_experience_power">
-            Experience needed: 0
-          </div>
-
-          <hr>
-          <p>Skills</p>
-          <ul>
             <li><label>Hand to hand</label> <input type="number" id="hand_to_hand" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Karate</label> <input type="number" id="karate" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
             <li><label>Sword</label> <input type="number" id="sword" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
@@ -139,7 +126,20 @@
             <li><label>Warcry</label> <input type="number" id="warcry" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></li>
           </ul>
 
-          <div id="required_experience_skill">
+          <table>
+            <tr>
+              <th>Skill</th>
+              <th>Base</th>
+              <th>Upgrade</th>
+              <th>Experience needed</th>
+            </tr>
+            <tr>
+              <td>Braveness</td>
+              <td><input type="number" min="1" max="120" value="1"></td>
+              <td><input type="number" id="braveness" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></td>
+            </tr>
+          </table>
+          <div id="required_experience">
             Experience needed: 0
           </div>
 
@@ -154,7 +154,7 @@
         character_modifiers = get_character_modifiers(character);
         difficulty = get_difficulty(trait, character_modifiers);
         experience = experience_needed(trait, difficulty);
-        show(trait, experience);
+        show(experience);
       }
 
       function get_character() {
@@ -219,14 +219,8 @@
         }
       }
 
-      function show(trait, experience) {
-        if (trait.name == "stat") {
-          document.getElementById("required_experience_stat").innerHTML = "Experience needed: " + experience;
-        } else if (trait.name == "skill") {
-          document.getElementById("required_experience_skill").innerHTML = "Experience needed: " + experience;
-        } else {
-          document.getElementById("required_experience_power").innerHTML = "Experience needed: " + experience;
-        }
+      function show(experience) {
+        document.getElementById("required_experience").innerHTML = "Experience needed: " + experience;
       }
 
     </script>
