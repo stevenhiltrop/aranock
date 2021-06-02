@@ -93,10 +93,10 @@
               <th>Upgrade</th>
               <th>Experience needed</th>
             </tr>
-            <tr id="braveness">
+            <tr id="braveness" oninput="calculate(this)">
               <td>Braveness</td>
               <td class="base">1</td>
-              <td><input type="number" name="stat" min="1" max="120" placeholder="111" oninput="calculate(this)"></td>
+              <td><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
               <td class="required_experience"></td>
             </tr>
             <tr>
@@ -325,9 +325,8 @@
         console.log(trait)
         character = get_character();
         character_modifiers = get_character_modifiers(character);
-        difficulty = get_difficulty(trait, character_modifiers);
-        experience = experience_needed(trait, difficulty);
-        show(trait, experience);
+        difficulty = get_difficulty(trait.id, character_modifiers);
+        calculate_experience(trait, difficulty);
       }
 
       function get_character() {
@@ -354,7 +353,7 @@
         }
       }
 
-      function get_difficulty(trait, character_modifiers) {
+      function get_difficulty(skill, character_modifiers) {
         physical = ["braveness", "strength", "agility", "hitpoints", "endurance", "hand_to_hand", "karate", "sword", "axe", 
           "dagger", "staff", "two_handed_sword", "lock_picking", "stealth", "perception", "swimming", "bartering", "repair",
           "resistance", "regenerate", "rest", "immunity", "surround_hit", "warcry"];
@@ -362,9 +361,9 @@
           "stun", "curse", "bless", "identify", "blast", "dispell_magic", "heal", "ghost_companion", "meditation", 
           "sense_magic", "concentration"];
 
-        if (physical.includes(trait.id)) {
+        if (physical.includes(skill)) {
           return character_modifiers[0]
-        } else if (magical.includes(trait.id)) {
+        } else if (magical.includes(skill)) {
           return character_modifiers[1]
         } else {
           console.debug("Yea na yea, you seem to be doing something wrong here ey!");
@@ -372,7 +371,8 @@
         
       }
 
-      function experience_needed(trait, difficulty) {
+      function calculate_experience(trait, difficulty) {
+        console.log(trait)
         base = trait.value;
 
         if (trait.name == "stat") {
