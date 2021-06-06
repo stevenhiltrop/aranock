@@ -40,10 +40,6 @@
       input[type=number] {
         -moz-appearance: textfield;
       }
-
-      input[type='number'] {
-        width: 5%;
-      } 
     </style>
 
   </head>
@@ -88,232 +84,227 @@
           <hr>
           <table>
             <tr>
-              <th>Skill</th>
+              <th width="20%">Skill</th>
               <th>Base</th>
-              <th>Upgrade</th>
               <th>Experience needed</th>
             </tr>
             <tr id="braveness" oninput="calculate(this)">
               <td>Braveness</td>
-              <td class="base">1</td>
-              <td><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
               <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="wisdom" oninput="calculate(this)">
               <td>Wisdom</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="wisdom" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="intuition" oninput="calculate(this)">
               <td>Intuition</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="intuition" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="strength" oninput="calculate(this)">
               <td>Strength</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="strength" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="agility" oninput="calculate(this)">
               <td>Agility</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="agility" name="stat" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="hitpoints" oninput="calculate(this)">
               <td>Hitpoints</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="hitpoints" name="hitpoints" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="endurance" oninput="calculate(this)">
               <td>Endurance</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="endurance" name="endurance" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="mana" oninput="calculate(this)">
               <td>Mana</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="mana" name="mana" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="hand_to_hand" oninput="calculate(this)">
               <td>Hand to hand</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="hand_to_hand" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="karate" oninput="calculate(this)">
               <td>Karate</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="karate" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="sword" oninput="calculate(this)">
               <td>Sword</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="sword" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="axe" oninput="calculate(this)">
               <td>Axe</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="axe" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="dagger" oninput="calculate(this)">
               <td>Dagger</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="dagger" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="staff" oninput="calculate(this)">
               <td>Staff</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="staff" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="two_handed_sword" oninput="calculate(this)"></tr>
               <td>Two Handed Sword</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="two_handed_sword" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="lock_picking" oninput="calculate(this)">
               <td>Lock Picking</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="lock_picking" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="stealth" oninput="calculate(this)">
               <td>Stealth</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="stealth" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="perception" oninput="calculate(this)">
               <td>Perception</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="perception" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="swimming" oninput="calculate(this)">
               <td>Swimming</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="swimming" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="magic_shield" oninput="calculate(this)">
               <td>Magic Shield</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="magic_shield" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="barterin" oninput="calculate(this)">
               <td>Bartering</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="bartering" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="repair" oninput="calculate(this)">
               <td>Repair</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="repair" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="light" oninput="calculate(this)">
               <td>Light</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="light" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="recall" oninput="calculate(this)">
               <td>Recall</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="recall" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="proction" oninput="calculate(this)">
               <td>Protection</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="protection" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="enhance weapon" oninput="calculate(this)">
               <td>Enhance Weapon</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="enhance_weapon" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="stun" oninput="calculate(this)">
               <td>Stun</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="stun" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="curse" oninput="calculate(this)">
               <td>Curse</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="curse" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="bless" oninput="calculate(this)">
               <td>Bless</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="bless" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="identify" oninput="calculate(this)">
               <td>Identify</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="identify" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="resistance" oninput="calculate(this)">
               <td>Resistance</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="resistance" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="blast" oninput="calculate(this)">
               <td>Blast</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="blast" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="dispell_magic" oninput="calculate(this)">
               <td>Dispell Magic</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="dispell_magic" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="heal" oninput="calculate(this)">
               <td>Heal</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="heal" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="ghost_companion" oninput="calculate(this)">
               <td>Ghost Companion</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="ghost_companion" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="regeneration" oninput="calculate(this)">
               <td>Regeneration</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="regeneration" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="rest" oninput="calculate(this)">
               <td>Rest</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="rest" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="meditation" oninput="calculate(this)">
               <td>Meditation</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="meditation" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="sense_magic" oninput="calculate(this)">
               <td>Sense Magic</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="sense_magic" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="immunity" oninput="calculate(this)">
               <td>Immunity</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="immunity" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="surround_hit" oninput="calculate(this)">
               <td>Surround Hit</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="surround_hit" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="concentration" oninput="calculate(this)">
               <td>Concentration</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="concentration" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
-            <tr>
+            <tr id="warcry" oninput="calculate(this)">
               <td>Warcry</td>
-              <td><input type="number" min="1" max="120" value="1"></td>
-              <td><input type="number" id="warcry" name="skill" min="1" max="120" value="1" oninput="calculate(this)"></td>
+              <td class="base"><input type="number" name="stat" min="1" max="120" placeholder="1"></td>
+              <td class="required_experience"></td>
             </tr>
 
           </table>
-          <div id="required_experience">
-            Experience needed: 0
-          </div>
 
         </section>
       </section>
@@ -321,12 +312,11 @@
 
     <!--Javascript-->
     <script>
-      function calculate(trait) {
-        console.log(trait)
+      function calculate(table) {
         character = get_character();
         character_modifiers = get_character_modifiers(character);
-        difficulty = get_difficulty(trait.id, character_modifiers);
-        calculate_experience(trait, difficulty);
+        difficulty = get_difficulty(table.id, character_modifiers);
+        calculate_experience(table, difficulty);
       }
 
       function get_character() {
@@ -353,7 +343,7 @@
         }
       }
 
-      function get_difficulty(skill, character_modifiers) {
+      function get_difficulty(trait, character_modifiers) {
         physical = ["braveness", "strength", "agility", "hitpoints", "endurance", "hand_to_hand", "karate", "sword", "axe", 
           "dagger", "staff", "two_handed_sword", "lock_picking", "stealth", "perception", "swimming", "bartering", "repair",
           "resistance", "regenerate", "rest", "immunity", "surround_hit", "warcry"];
@@ -361,9 +351,9 @@
           "stun", "curse", "bless", "identify", "blast", "dispell_magic", "heal", "ghost_companion", "meditation", 
           "sense_magic", "concentration"];
 
-        if (physical.includes(skill)) {
+        if (physical.includes(trait)) {
           return character_modifiers[0]
-        } else if (magical.includes(skill)) {
+        } else if (magical.includes(trait)) {
           return character_modifiers[1]
         } else {
           console.debug("Yea na yea, you seem to be doing something wrong here ey!");
@@ -371,31 +361,30 @@
         
       }
 
-      function calculate_experience(trait, difficulty) {
-        console.log(trait)
-        base = trait.value;
+      function calculate_experience(table, difficulty) {
+        // base = table.cells.item(1).firstChild.value;
 
-        if (trait.name == "stat") {
-          return Math.round(base * base * base * difficulty / 20);
+        [skill, base, required_experience] = table.cells;
+        base_name = base.firstChild.name;
+        upgrade = base.firstChild.value;
+
+        if (base_name == "stat") {
+          required_experience.innerHTML = Math.round(upgrade * upgrade * upgrade * difficulty / 20);
         }
-        else if (trait.name == "skill") {
-          return Math.round(base * base * base * difficulty / 40);
+        else if (base_name == "skill") {
+          required_experience.innerHTML = Math.round(upgrade * upgrade * upgrade * difficulty / 40);
         }
-        else if (trait.name == "hitpoints" || trait.name == "mana") {
-          return Math.round(base * difficulty);
+        else if (base_name == "hitpoints" || base_name == "mana") {
+          required_experience.innerHTML = Math.round(upgrade * difficulty);
         }
-        else if (trait.name == "endurance") {
-          return Math.round(base * difficulty / 2);
+        else if (base_name == "endurance") {
+          required_experience.innerHTML = Math.round(upgrade * difficulty / 2);
         }
         else {
-          console.debug("You're doing it again.. Steve..")
+          console.debug("You're doing it again.. Steve..");
         }
       }
-
-      function show(trait, experience) {
-        document.getElementById("required_experience").innerHTML = experience;
-      }
-
+        
     </script>
   </body>
 </html>
